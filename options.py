@@ -27,8 +27,9 @@ class Options(argparse.ArgumentParser):
         super().__init__(description="This script inserts data into a scheme previously created for outlier detection experiments", formatter_class=SortingHelpFormatter)
         # Positional arguments
         super().add_argument('-f','--fileName', type=str, help='JSON File where data is stored.')
-
-
+        super().add_argument('--delete_all','--bd', type=str)
+        
+         
     def parse(self):
         return super().parse_args()
 
