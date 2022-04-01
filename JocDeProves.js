@@ -44,5 +44,5 @@ db.Nodule.aggregate({$match: {"DiagnosisPatient":"Benign", "DiagnosisNodul": "Be
 
 
 //9. Modificar la ResolutionTV aumentant-la un 20% dels escàners que es van realitzar amb DataCT = 18/11/2018 
-db.CTScanner.aggregate({$match: {dataCT: ISODate("2018-11-18")}},{$set: {"ResolutionTV":{$multiply:[1.2, "$ResolutionTV"]}}})
-
+db.CTScanner.update({dataCT: ISODate("2018-11-18")},{$mul: {ResolutionTV: 1.2}})
+db.CTScanner.find()
