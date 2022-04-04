@@ -1,3 +1,5 @@
+use MongoDB-BDNR
+
 //1. Escàners diferents que hi ha a la BD. Mostra el device.
 db.CTScanner.distinct("Device")
 
