@@ -44,9 +44,12 @@ except:
     bd.Relation.drop()
     coll_Relation = bd.create_collection('Relation')
     
-csvfile1 = pd.read_excel("Dades.xlsx", sheet_name="Cases")
-csvfile2 = pd.read_excel("Dades.xlsx", sheet_name="Training")
-csvfile3 = pd.read_excel("Dades.xlsx", sheet_name="MethodOutput")
+opts = Options()
+args = opts.parse()
+
+csvfile1 = pd.read_excel(args.fileName, sheet_name="Cases")
+csvfile2 = pd.read_excel(args.fileName, sheet_name="Training")
+csvfile3 = pd.read_excel(args.fileName, sheet_name="MethodOutput")
 
 headers_Relation=["PatientID","NodulID","MethodID", "ExperimentRepetition", "Train", "RadiomicsDiagnosis"]
 col = {}
